@@ -1,0 +1,23 @@
+
+<mat-grid-list cols="1" *ngIf="!personaje; else divPersonaje">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divPersonaje>
+    <p>{{personaje | json}}</p>
+    <div class="container">
+        <app-card-personaje class="card" [personaje]="personaje"></app-card-personaje>
+    </div> 
+    <div class="container">
+        <button
+        mat-raised-button color="primary"
+        (click)="regresar()">
+        Regresar
+    </button>
+    </div>   
+
+</ng-template>
+
+

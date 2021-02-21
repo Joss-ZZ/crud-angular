@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-img">
+        <img [src]="personaje | imagen">
+    </div>
+    <div class="card-info">
+        <h3>Nombre: <span>{{personaje.nombre}}</span></h3>
+        <h3>Género: <span>{{personaje.genero }}</span></h3>
+    </div>
+    <div class="card-accion">
+        <button [routerLink]="['/personajes', personaje.id]">Ver más</button>
+        <button [routerLink]="['/personajes/editar', personaje.id]">Editar</button>
+    </div>
+</div>

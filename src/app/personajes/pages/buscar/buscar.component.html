@@ -1,0 +1,34 @@
+<div fxLayout="column">
+    <div>
+        <h1>Buscar Personaje</h1>
+        <mat-divider></mat-divider>
+    </div>
+    
+    <div>
+        <h2>Buscar</h2>
+        <mat-form-field class="example-full-width">
+            <mat-label>Number</mat-label>
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [(ngModel)]="termino"
+                   (input)="buscar()"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption 
+                              #auto="matAutocomplete"
+                              (optionSelected)="opcionSeleccionada($event)">
+              <mat-option *ngFor="let personaje of personajes" [value]="personaje">
+                {{personaje.nombre}}
+              </mat-option>
+              <mat-option *ngIf="personajes.length === 0 && termino.length>0" value="">
+                No se encontraron coincidencias con el término "{{termino}}"
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+    </div>
+
+    <div>
+        <pre>{{ personajeSeleccionado | json}}</pre>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="contenedor">
+    <h2>{{(personaje.id)?'Editar':'Registrar'}} personaje</h2>
+    <mat-divider></mat-divider>
+    <div class="contenedor__formulario">
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <mat-icon matSuffix>perm_identity</mat-icon>
+              <input matInput
+                     [(ngModel)]="personaje.nombre">
+            </mat-form-field>
+        </p>    
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Imagen URL</mat-label>
+                <mat-icon matSuffix>perm_media</mat-icon>
+                <input matInput
+                       [(ngModel)]="personaje.img">
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Seleccionar género</mat-label>
+                <mat-select [(ngModel)]="personaje.genero">
+                  <mat-option *ngFor="let genero of generos" [value]="genero.genero">
+                      {{genero.genero | titlecase}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </p>  
+
+        <div class="contenedor__formulario-accion">
+            <button mat-raised-button color="primary" (click)="registrar()">
+                {{(personaje.id)?'Actualizar':'Registrar'}}
+            </button>
+            <button *ngIf="personaje.id" mat-raised-button color="warn" (click)="eliminar()">Eliminar</button>
+        </div>
+
+    </div>
+        
+    <img [src]="personaje | imagen">
+
+</div>
