@@ -21,7 +21,7 @@ No olviden ejecutar el siguiente comando en la terminal para reconstruir los mó
 
 Ejecutar el siguiente comando en la terminal para instalar JSON Server:
 ```
-	npm install
+	npm install -g json-server
 ```
 Crear un archivo "db.json" y pegar lo siguiente:
 ```
