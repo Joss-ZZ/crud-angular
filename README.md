@@ -1,27 +1,89 @@
-# Practica1
+### Aplicación CRUD con Angular 11
+# 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+![](https://i.postimg.cc/jqkzQcn0/imagen-Naruto.png)
+# 
+- Maquetación con CSS Grid y Flexbox.
+- Uso de Angular Material.
+- Pipes personalizados.
+- Rutas hijas y Lazyload.
+- Protección de rutas.
+- JSON Server.
+- Peticiones HTTP
+# 
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+No olviden ejecutar el siguiente comando en la terminal para reconstruir los módulos de node e instalar las dependencias:
+```
+	npm install
+```
 
-## Code scaffolding
+Ejecutar el siguiente comando en la terminal para instalar JSON Server:
+```
+	npm install
+```
+Crear un archivo "db.json" y pegar lo siguiente:
+```
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "Jhosimar",
+      "email": "coderjzz@gmail.com"
+    }
+  ],
+  "personajes": [
+    {
+      "id": "naruto",
+      "nombre": "Naruto",
+      "genero": "Masculino"
+    },
+    {
+      "id": "kakashi",
+      "nombre": "Kakashi",
+      "genero": "Masculino"
+    },
+    {
+      "id": "minato",
+      "nombre": "Minato",
+      "genero": "Masculino"
+    },
+    {
+      "id": "neji",
+      "nombre": "Neji",
+      "genero": "Masculino"
+    },
+    {
+      "id": "obito",
+      "nombre": "Obito",
+      "genero": "Masculino"
+    },
+    {
+      "id": "rocklee",
+      "nombre": "Rocklee",
+      "genero": "Masculino"
+    },
+    {
+      "id": "sakura",
+      "nombre": "Sakura",
+      "genero": "Femenino"
+    },
+    {
+      "id": "sasuke",
+      "nombre": "Sasuke",
+      "genero": "Masculino"
+    }
+  ]
+}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Abrir otra ventana de la terminal, navegar hacia la carpeta en donde se encuentra su archivo "db.json" y ejecutar el siguiente comando:
+```
+json-server --watch db.json
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Abrir otra ventana de la terminal y ejecutar la aplicación:
+```
+ng serve -o
+```
