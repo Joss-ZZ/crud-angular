@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-principal',
@@ -12,9 +14,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private authService: AuthService) { }
+
+  get usuario() {
+    return this.authService.usuario;
+  }
 
   ngOnInit(): void {
+  }
+
+  salir(){
+    this.authService.cerrarSesion();
+    this.router.navigate(['./auth']);
   }
 
 }

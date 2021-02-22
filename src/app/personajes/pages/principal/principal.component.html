@@ -38,9 +38,9 @@
             <mat-icon>menu</mat-icon>
         </button>
 
-        <span>NombreUsuario</span>
+        <span>{{usuario.usuario}}</span>
 
-        <button mat-button color="warn">
+        <button mat-button color="warn" (click)="salir()">
             Salir
         </button>
     </mat-toolbar>
